@@ -64,11 +64,11 @@ int CreateGRN(int N) {
 }
 //3.
 void SetN(int idx, int value) {
-    if (idx >= Gcounter || idx < 0) {
+    if (idx > Gcounter || idx < 0) {
         printf("Out of range N's\n");
         return;
     }
-    Array_GRN[idx] = value;
+    Array_GRN[idx-1] = value;
 }
 
 //4.
@@ -114,6 +114,7 @@ DWORD WINAPI thread_3(LPVOID lpParam) {
 DWORD WINAPI thread_4(LPVOID lpParam) {
     SetN(idx, value);
     value = 0;
+    idx = 0;
     return 0;
 }
 DWORD WINAPI thread_5(LPVOID lpParam) {
@@ -158,7 +159,7 @@ DWORD WINAPI thread_2(LPVOID lpParam) {
             continue;
         }
         if (choice == 4) {
-            printf("Enter index for  generator\n> ");
+            printf("Enter element(A[0] = 1) to change\n> ");
             scanProtectedInput(&idx);
             printf("Enter value for  generator\n> ");
             scanProtectedInput(&value);
