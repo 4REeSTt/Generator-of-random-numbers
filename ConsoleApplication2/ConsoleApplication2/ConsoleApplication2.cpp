@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <windows.h>
 
-#define USER_INTERFACE "Choose tusk: \n\
+#define USER_INTERFACE "Choose task: \n\
     2. Get number of Gererators\n\
     3. Add one more Random number generator\n\
     4. Change N on special Generator\n\
